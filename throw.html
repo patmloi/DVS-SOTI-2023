@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="chart_challenges_count"></div>
+
+<script>
+
+    // set the dimensions and margins of the graph
+    let margin = {top: 10, right: 30, bottom: 20, left: 200},
+        width = 600 - margin.left - margin.right;
+        height = 400 - margin.top - margin.bottom;
+        console.log("Height")
+        console.log(height)
+    
+    // append the svg object to the body of the page
+    let svg = d3.select("#chart_challenges_count")
+      .append("svg") 
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+    
+    // Parse the Data
+    d3.csv("resource/challenges_count.csv", function(data) {
+        console.log("Data")
+        console.log(data)
+        
+        data.sort(function(a, b) {
+            return b["Significant impact"] - a["Significant impact"];
+        });
+
+        let subgroups = data.columns.slice(1, -1)
+        console.log("Subgroups")
+        console.log(subgroups)
+        
+        // List of groups = species here = value of the first column called group -> I show them on the X axis
+        let groups = d3.map(data, function(d){return(d.Challenges)}).keys()
+        console.log("Groups")
+        console.log(groups)
+
+        let max = d3.max(data, function(d){
+            return d["Total"]
+        })
+        console.log("Max")
+        console.log(max)
+
+        let x = d3.scaleLinear()
+            .domain([0, max])
+            .range([0, width]);
+
+        console.log("X let")
+        console.log(x)
+
+        let y = d3.scaleBand()
+            .domain(groups)
+            .rangeRound([margin.top, height]);
+            // .range(0, height);
+            // .range(0, height)
+            // .padding([0.2]);
+
+        console.log("Y let")
+        console.log(y)
+
+        // color palette = one color per subgroup
+        let color = d3.scaleOrdinal()
+            .domain(subgroups)
+            .range(['#fa8b02', '#ffc44c', '#00527a', '#16a1cd'])
+
+        // List of subgroups = header of the csv files = soil condition here
+         
+        svg.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x).tickSizeOuter(0));
+
+        svg.append("g")
+        .call(d3.axisLeft(y).tickSizeOuter(0));
+    
+
+        //stack the data? --> stack per subgroup
+        let stackedData = d3.stack()
+            .keys(subgroups)(data)
+        console.log("Stacked data")
+        console.log(stackedData)
+        
+        // Show the bars
+        svg.append("g")
+            .selectAll("g")
+            // Enter in the stack data = loop key per key = group per group
+            .data(stackedData)
+            .enter().append("g")
+            .attr("fill", function(d) { return color(d.key); })
+            .selectAll("rect")
+            // enter a second time = loop subgroup per subgroup to add all rectangles
+            .data(function(d) { 
+                console.log("Data function")
+                console.log(d)
+                return d; })
+            .enter().append("rect")
+                .attr("x", function(d) { 
+                    // console.log("X")
+                    // console.log(x(d[1]-d[0]))
+                    return  x(d[0]); })
+                .attr("y", function(d) { 
+                    // console.log("Y")
+                    // console.log(d.data.Challenges)
+                    return y(d.data.Challenges); })
+                    
+                    // console.log("Y let")
+                    // console.log(y)
+                    // console.log("X let")
+                    // console.log(x)
+                .attr("height", y.bandwidth() ) //y.bandwidth() 
+
+                .attr("width", function(d) { 
+                    // console.log("Width")
+                    // console.log(d)
+                    return x(d[1]-d[0]);});
+
+                })
+    
+    </script>

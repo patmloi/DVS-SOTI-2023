@@ -1,0 +1,116 @@
+@import 'global'; 
+
+.dm-serif-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-italic{
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+.dm-sans> {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+div {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: auto;
+    margin: auto;
+    max-width: 1320px;
+}
+
+h1{
+  font-size: 5em;
+}
+
+p {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+span{
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@keyframes spanhighlight {
+  from {
+    background-size: 0% 100%;
+  }
+
+  to {
+    background-size: 100% 100%;
+    
+  }
+}
+
+.span-highlight{
+  text-decoration: none;
+  background-repeat: no-repeat;
+  
+  animation-duration: 1.0s;
+  animation-name: spanhighlight;
+  animation-iteration-count: 1;
+  animation-direction: forwards;
+}
+.span-highlight.significant{
+  background-image: linear-gradient(rgba(253,158,0,255) 0%, rgba(253,158,0,255) 100%);
+}
+.span-highlight.moderate{
+  background-image: linear-gradient(rgba(255,205,92,255) 0%, rgba(255,205,92,255) 100%);
+}
+.span-highlight.minor{
+  background-image: linear-gradient(rgba(0,101,141,255) 0%, rgba(0,101,141,255) 100%);
+  color: white;
+}
+.span-highlight.no{
+  background-image: linear-gradient(rgba(12,176,215,255) 0%, rgba(12,176,215,255) 100%);
+}
+.span-highlight.senior{
+  background-image: linear-gradient(rgba(185,227,201,255) 0%, rgba(185,227,201,255) 100%);
+}
+.span-highlight.time{
+  background-image: linear-gradient(rgba(92,205,242,255) 0%, rgba(92,205,242,255) 100%);
+}
+
+
+#title-img{
+    text-align: center;
+    font-size: 10em;
+}
+
+.row{
+  width: auto;
+}
+
+.explanation{
+  text-align: left; 
+}
+
+.block-headline.datawrapper-aLRsl-ckuume{
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.challenges-count-explanation{
+    display: none; 
+}
+/* .block-description.datawrapper-XzszG-7g5u5u{
+  background-color: coral;
+} */

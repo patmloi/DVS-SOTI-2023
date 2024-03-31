@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <!-- Style -->
+    <link rel="stylesheet" href="/assets/styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&display=swap" rel="stylesheet">
+
+  </head>
+
+<div id="title" class="container mx-auto p-4">
+    <div class="row">
+        <div class="col-sm-10" style="display: inline-block;">
+            <h1 id="title-text" class="dm-serif-regular p-3"> Challenges faced by the data visualisation community</h1>
+            <p class="p-3">
+                Data Visualisation Society's State of the Industry survey aims to identify the key challenges that the data visualisation community faces. The results for the year 2023 contain over 800 responses, and this piece identifies the key challenge that data visualisation professionals face, and how this challenge impacts professionals across seniority and experience levels differently.
+            </p>
+        </div>
+        <div id="title-img" class="col-sm-2 d-none d-lg-block d-xl-block">
+            ⛰️
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <div id="challanges-count" class="container mx-auto p-3" style="display: inline-block; text-align: left;">
+        <div>
+            <div id="challenges-count-intro" class="section-intro container mx-auto p-3" style="display: inline-block;">
+                <h2 id="challenges-count-head" class=" section-intro-head dm-serif-regular p-3"> 
+                    Identifying the main challenge
+                </h2>
+                <p class="p-3">
+                    The Data Visualisation Society has identified 12 key challenges that data visualisations may face during their work. In order to determine which challenge to focus on in this analysis, the challenges should be sorted by the degree of impact they have on professionals. Hence, the following section sorts the challenges by the percentage of responses for each level of impact, and focuses on the top three challenges.
+                </p>
+            </div>
+        </div>
+    
+        <div class="row m-3 ">
+
+            <div class="col-sm-2 mb-4">
+                <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                    <button id="challenges-count-btn-significant" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'challenges-count-explanation-significant',
+                            'content_class': 'challenges-count-explanation'},
+                        {
+                            'content_id': 'challenges-count-chart-significant',
+                            'content_class': 'challenges-count-chart'
+                        }
+                        ])"> 
+                        Significant impact
+                    </button>
+    
+                    <button id="challenges-count-btn-moderate" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'challenges-count-explanation-moderate',
+                            'content_class': 'challenges-count-explanation'},
+                        {
+                            'content_id': 'challenges-count-chart-moderate',
+                            'content_class': 'challenges-count-chart'
+                        }
+                        ])"> 
+                        Moderate impact
+                    </button>
+    
+                    <button id="challenges-count-btn-minor" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'challenges-count-explanation-minor',
+                            'content_class': 'challenges-count-explanation'},
+                        {
+                            'content_id': 'challenges-count-chart-minor',
+                            'content_class': 'challenges-count-chart'
+                        }
+                        ])"> 
+                        Minor impact
+                    </button>
+    
+                    <button id="challenges-count-btn-no" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'challenges-count-explanation-no',
+                            'content_class': 'challenges-count-explanation'},
+                        {
+                            'content_id': 'challenges-count-chart-no',
+                            'content_class': 'challenges-count-chart'
+                        }
+                        ])"> 
+                        No impact
+                    </button>
+                </div>
+            </div>
+
+            <div id="challenges-count-charts" class="col-sm-5 mb-4">
+    
+                <div id="challenges-count-chart-significant" class="challenges-count-chart">
+                    <div style="min-height:451px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/aLRsl/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/aLRsl/full.png" alt="" /></noscript></div>
+                </div>
+        
+                <div id="challenges-count-chart-moderate" class="challenges-count-chart">
+                    <div style="min-height:451px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/seWOy/embed.js?v=11" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/seWOy/full.png" alt="" /></noscript></div>
+                </div>
+        
+                <div id="challenges-count-chart-minor" class="challenges-count-chart">
+                    <div style="min-height:451px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/GZdrc/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/GZdrc/full.png" alt="" /></noscript></div>
+                </div>
+        
+                <div id="challenges-count-chart-no" class="challenges-count-chart">
+                    <div style="min-height:451px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/XzszG/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/XzszG/full.png" alt="" /></noscript></div>
+                </div>
+                      
+            </div>
+
+            <div id="challenges-count-explanations" class="col-sm-5 d-flex align-items-center mb-4">
+                <div id="challenges-count-explanation-significant" class="content explanation challenges-count-explanation">
+                    <p>
+                        When sorting the challenges by the percentage of respondents that identify the challenge as having a significant impact, the top three challenges with a signficiant impact are the lack of time, non-visualisation activities and accessing data. <span class="span-highlight significant">The lack of time is the challenge that has significant impact by a notable margin,</span> as there is a difference of more than 10 percentage points between the lack of time and the other two challenges. 
+
+                    </p>
+                    <p>
+                        The other two challenges, non-visualisation activities and accessing data, have similar proportions of respondents who identified them of having a significant impact, at 22% and 21% respectively. 
+                    </p>
+                </div>
+
+                <div id="challenges-count-explanation-moderate" class="content explanation challenges-count-explanation">
+                    <p>
+                        When sorting the challenges by the percentage of respondents that identify the challenge as having a moderate impact, the top three challenges are learning new tools, non-visualisation activities and the lack of time. <span class="span-highlight moderate">Learning new tools replaces the lack of time as the top challenge with moderate impact,</span> and the lack of time falls to third place, while non-visualisaiton activities remains in second place. Accessing data, which was a top challenge when sorting by significant impact, no longer appears within the top three challenges when sorted by moderate impact.
+                    </p>
+                    <p>
+                        As compared to sorting by significant impact, the difference in percentage points between the top three challenges is smaller when sorted by moderate impact. There is a less than 5 percentage point difference between the first and third challenges, at 38% and 34% respectively.
+                    </p>
+                </div>
+
+                <div id="challenges-count-explanation-minor" class="content explanation challenges-count-explanation">
+                    <p>
+                        When sorting the challenges by the percentage of respondents that identify the challenge as having a minor impact, the top three challenges are tool technology limits, lack of collaboration and lack of design expertise. Hence, it can be inferred that data visualisation professionals generally have sufficient tool capabilities, collaboration and individual design expertise - all of which are <span class="span-highlight minor">factors that enable data visualisation professionals to work well independently.</span>
+                    </p>
+                    <p>
+                        <span class="span-highlight minor">There may be a inverse relationship betweeen identifying a challenge as having significant impact and minor impact.</span> The lack of time and non-visualisation are two of the bottom three challenges cited having a minor impact, and the fourth bottom challenge is accessing data, all of which previously appeared in the top three challenges when sorted by significant impact. Conversely, tool technology limits and lack of design expertise, which are the top challenges cited having a minor impact, are the two least identified challenges when sorted by significant impact, as well as the fourth least identified challenge being lack of collaboration.
+                    </p>
+                </div>
+
+                <div id="challenges-count-explanation-no" class="content explanation challenges-count-explanation">
+                    <p>
+                        When sorting the challenges by the percentage of respondents that identify the challenge as having no impact, the top three challenges are low data literacy, lack of mentorship and data visualisation not being respected. Low data literacy having the largest share of 'no impact' responses could be due to the <span class="span-highlight no">necessity of understanding data within a data visualisation role,</span> and the frequency of interacting at multiple data visualisation steps. 
+                    </p>
+                    <p>
+                        The lack of mentorship being perceived as having no impact could be because individuals are not reaching out for mentorship, due to their seniority and experience. Alternatively, the lack of mentorship may not be a problem for many due to <span class="span-highlight no">strong support systems amongst data visualisation professionals,</span> which is supported by lack of collaboration being identified as the second challenge with the highest percentage of 'minor impact' responses. </p>
+                    <p>
+                        Data visualisation not being respected could be a challenge with no impact, which could be due to two reasons: Professionals not interacting with people who dismiss data visualisation on a regular basis, or more people have become convinced of the necessity of data visualisations.
+                    </p>
+                </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <div id="challanges-count" class="container mx-auto p-3" style="display: inline-block; text-align: left;">
+        <div>
+            <div id="challenges-count-intro" class="section-intro container mx-auto p-3" style="display: inline-block;">
+                <h2 id="challenges-count-head" class=" section-intro-head dm-serif-regular p-3"> 
+                    The lack of time across seniority levels 
+                </h2>
+                <p class="p-3">
+                    In the previous section, the lack of time was the top challenge identified as having a significant impact, and among the top three challenges identified as having a moderate impact. However, this challenge may affect different groups of professionals with varying levels of severity. Hence, this section explores how the lack of time affects professionals with different levels of experience, segmented by their years of experience in making data visualisations. 
+                </p>
+            </div>
+        </div>
+    
+        <div class="row m-3 ">
+            <div id="significant-count-chart" class="col-sm-6 mb-4">
+                <div style="display: inline-block; width: 100%"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/pTm9Q/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/pTm9Q/full.png" alt="" /></noscript></div>
+            </div>
+
+            <div id="significant-count-explanation" class="col-sm-6 d-flex align-items-center mb-4">
+                <div class="content explanation" style="display:inline">
+                    <p>
+                        <span class="span-highlight senior">The most common responses to the impact of the lack of time are "significant impact" and "moderate impact" by junior (1-5 years of experience) and mid-level (6-10 years of experience)</span> data visualisation professionals. 
+                        This can be attributed to the larger number of junior and mid-level professionals that took part in the survey, as compared to senior professionals (>10 years of experience).
+                    </p>
+
+                    <p>
+                        <span class="span-highlight senior">Across most seniority levels, respondents most commonly stated that the lack of time has a significant impact.</span> This is true for junior (1-5 years of experience) and mid-level (6-10 years of experience) data visualisation professionals, as well as senior data visualisation professionals (11-25 years of experience). 
+
+                        However, junior respondents (less than 1 year of work experience), as well as senior respondents (26 or more years of experience) most commonly stated that the lack of time had a moderate impact instead. 
+
+                    </p>
+
+                    <p>
+                        The number of "significant impact" and "moderate impact" responses by junior and mid-level professionals are similar, with a difference of about 10% between the number of "moderate impact" and "significant impact" responses in these two groups. However, <span class="span-highlight senior">the percentage difference between the number of responses for moderate and significant impact increases with seniority</span> up to 25 years of experience. For senior data visualisation professionals, the percentage differences between the number of responses for "moderate impact" and "significant impact" are 45.4% (11-15 years of experience), 77.8% (16-20 years of experience), and 400% (21-25 years of experience). Hence, the lack of time becomes a challenge with more of a significant impact than a moderate impact as seniority increases.
+
+                    </p>
+
+                </div>
+
+          </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center;">
+    <div id="challanges-count" class="container mx-auto p-3" style="display: inline-block; text-align: left;">
+        <div>
+            <div id="challenges-count-intro" class="section-intro container mx-auto p-3" style="display: inline-block;">
+                <h2 id="challenges-count-head" class=" section-intro-head dm-serif-regular p-3"> Time spent on data visualisation activities across seniority levels </h2>
+                <p class="p-3">
+                    The challenge of lacking time is broad, and does not have a clear root cause. However, it could be related to how data visualisation professionals spend their time on various tasks, since the challenge of "non-visualisation tasks" was identified alongside "lack of time" as one of the top three challenges cited as having a significant impact, or a moderate impact, illustrated in the first section. In addition, the time that a professional spends on a task would be dependent on their level of seniority and experience, and would be expected to be different across different groups. Hence, this section displays the number of respondents that spend a given amount of time on various data visualisation tasks, segmented by the years of experience that the respondents have in creating data visualisations.
+                </p>
+            </div>
+        </div>
+    
+        <div class="row m-3 ">
+
+            <div class="col-sm-2 mb-4">
+                <div class="btn-group-vertical btn-group-toggle" data-toggle="buttons">
+                    <button id="time-count-btn-1" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-1',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-1',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        Less than 1 year
+                    </button>
+    
+                    <button id="time-count-btn-5" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-5',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-5',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        1-5 years
+                    </button>
+    
+                    <button id="time-count-btn-10" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-10',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-10',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        6-10 years
+                    </button>
+    
+                    <button id="time-count-btn-15" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-15',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-15',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        11-15 years
+                    </button>
+
+                    <button id="time-count-btn-20" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-20',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-20',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        16-20 years
+                    </button>
+
+                    <button id="time-count-btn-25" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-25',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-25',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        21-25 years
+                    </button>
+
+                    <button id="time-count-btn-30" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-30',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-30',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        26-30 years
+                    </button>
+
+                    <button id="time-count-btn-35" type="button" class="btn btn-light" 
+                    onclick="showContents([
+                        {
+                            'content_id': 'time-count-explanation-35',
+                            'content_class': 'time-count-explanation'},
+                        {
+                            'content_id': 'time-count-chart-35',
+                            'content_class': 'time-count-chart'
+                        }
+                        ])"> 
+                        More than 30 years
+                    </button>
+                </div>
+            </div>
+        
+            <div id="time-count-charts" class="col-sm-6 mb-4">
+            
+                <div id="time-count-chart-1" class="time-count-chart">
+                    <div style="min-height:278px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/aAH80/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/aAH80/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-5" class="time-count-chart">
+                    <div style="min-height:302px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/gFQC1/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/gFQC1/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-10" class="time-count-chart">
+                    <div style="min-height:302px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/4fApK/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/4fApK/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-15" class="time-count-chart">
+                    <div style="min-height:302px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/Y4K1T/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/Y4K1T/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-20" class="time-count-chart">
+                    <div style="min-height:302px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/e1B5Z/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/e1B5Z/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-25" class="time-count-chart">
+                    <div style="min-height:278px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/xWxRw/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/xWxRw/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-30" class="time-count-chart">
+                    <div style="min-height:230px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/wOegf/embed.js?v=1" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/wOegf/full.png" alt="" /></noscript></div>
+                </div>
+                <div id="time-count-chart-35" class="time-count-chart">
+                    <div style="min-height:278px"><script type="text/javascript" defer src="https://datawrapper.dwcdn.net/v6Ki2/embed.js?v=2" charset="utf-8"></script><noscript><img src="https://datawrapper.dwcdn.net/v6Ki2/full.png" alt="" /></noscript></div>
+                </div>
+            </div>
+    
+            <div id="challenges-count-explanations" class="col-sm-4 d-flex align-items-center mb-4">
+                <div id="time-count-explanation-1" class="content explanation time-count-explanation">
+                    <p>
+                        <span class="span-highlight time">Data visualisation professionals with less than one year of experience most commonly spend more time producing visualisations than professionals with more experience.</span> Unlike most other professionals, data visualisation professionals with less than one year of experience most frequently spend between 6 and 10 hours on creating visualisations, as opposed to other groups of professionals that most frequently spend 5 hours or less on creating data visualisations. 
+
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-5" class="content explanation time-count-explanation">
+                    <p>
+                        <span class="span-highlight time">The number of responses for the time spent on managing visualisations were similar for the categories "Less than 5 years" and "None".</span> This does not generally occur for other tasks, or at other seniority levels, as there tends to be a large difference in the number of responses for "Less than 5 years" and "None" for all tasks. 
+
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-10" class="content explanation time-count-explanation">
+                    <p>
+                        As compared to other tasks within this experience level, there are <span class="span-highlight time">notably fewer professionals spending no time on producing visualisations,</span> and in turn, there are <span class="span-highlight time">more professionals spending 11-20 hours producing visualisations. </span>
+
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-15" class="content explanation time-count-explanation">
+                    <p>
+                        Unlike professionals with less experience, <span class="span-highlight time">none of the data visualisation professionals with this level of experience has spent more than 20 hours on ideation.</span> <span class="span-highlight time"> They also do not spend more than 30 hours on producing visualisations.</span> These observations continue to hold true in groups of data visualisation professionals with more experience. 
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-20" class="content explanation time-count-explanation">
+                    <p>
+                        Similar to the time spent on ideation among professionals with 11-15 years of experience, <span class="span-highlight time">the time spent on data analysis does not exceed 20 hours</span> at this level of seniority and upwards.
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-25" class="content explanation time-count-explanation">
+                    <p>
+                        <span class="span-highlight time">All data visualisation professionals with this level of seniority produce visualisations.</span> This is unlike other groups of data visualisation professionals, where there are professionals that spend no time on creating visualisations. 
+
+                    </p>
+
+                    <p>
+                        In addition, unlike professionals with less experience, <span class="span-highlight time">none of the data visualisation professionals with this level of experience has spent more than 30 hours on any task.</span> This observation continues to hold true in groups of data visualisation professionals with more experience. 
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-30" class="content explanation time-count-explanation">
+                    <p>
+                        After cleaning the data, there was only one respondent who with 26-30 years of experience with data visualisation who completed this question. Hence, <span class="span-highlight time">these results are not representative of this group</span> of data visualisation professionals.
+
+                    </p>
+                </div>
+
+                <div id="time-count-explanation-35" class="content explanation time-count-explanation">
+                    <p>
+                        Professionals at this level of seniority <span class="span-highlight time">generally do not spend more than 20 hours on data visualisation tasks,</span> and <span class="span-highlight time">only spend more than 10 hours on ideation, producing visualisations and managing visualisations.</span>
+                    </p>
+                </div>
+
+            </div>
+    
+        </div>
+      </div>
+</div>
+
+<!-- Load d3.js -->
+<script>
+    // Select button by default 
+    function showDefaultButton(buttonId){
+        document.addEventListener("DOMContentLoaded", function(event) {
+            document.getElementById(buttonId).click();
+    })}
+
+    function setButtonColours(buttonId){
+        var buttons = document.querySelectorAll('.btn');
+                buttons.forEach(function(button) {
+                button.classList.remove('btn-secondary'); // Replace 'btn-primary' with the default class for unclicked buttons
+                button.classList.add('btn-light');
+            });
+
+        var clickedButton = document.getElementById(buttonId);
+        clickedButton.classList.remove('btn-light');
+        clickedButton.classList.add('btn-secondary'); 
+    }
+    // Show content when button is pressed
+    function showContent(contentId, contentClass) {
+        // Hide all content elements
+        var contents = document.getElementsByClassName(contentClass);
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none';
+        }
+        
+        // Show the selected content
+        var contentToShow = document.getElementById(contentId);
+        console.log('Content To Show')
+        console.log(contentToShow)
+        if (contentToShow) {
+            contentToShow.style.display = 'block';
+            console.log('Display Block')
+        }
+    }
+
+    function showContents(contentIdentifiers){
+        console.log("Console Identifiers")
+        console.log(contentIdentifiers)
+
+        buttonId = event.target.id
+        setButtonColours(buttonId)
+
+        contentIdentifiers.forEach(
+            (element) => {
+                console.log('Element')
+                console.log(element)
+                let contentId = element.content_id
+                console.log('ContentID')
+                console.log(contentId)
+                let contentClass = element['content_class']
+                showContent(contentId, contentClass)
+                console.log('Content Shown')
+            })
+    }
+
+    showDefaultButton("challenges-count-btn-significant");
+    showDefaultButton("time-count-btn-1");
+
+</script>
+<script>
+    function handleAction1() {
+      // Code to perform action for the first button
+      console.log('Action 1 performed');
+    }
+  
+    function handleAction2() {
+      // Code to perform action for the second button
+      console.log('Action 2 performed');
+    }
+  
+    function handleAction3() {
+      // Code to perform action for the third button
+      console.log('Action 3 performed');
+    }
+  </script>
+  
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>r
